@@ -1,7 +1,6 @@
 #! /usr/bin/perl
 
 use Modern::Perl;
-use JSON;
 use Data::Dumper;
 use FindBin qw( $Bin ) ;
 
@@ -17,11 +16,11 @@ my $eventData = {
     },
     locationUid => "69680283",
     timings => [
-		{
-			begin => '2019-06-02T13:45:00+0200',
-			end => '2019-06-02T15:45:00+0200'
-		}
-	]
+        {
+            begin => '2019-06-02T13:45:00+0200',
+            end => '2019-06-02T15:45:00+0200'
+        }
+    ]
 };
 
 my $oa = OpenAgenda->new();

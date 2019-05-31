@@ -20,7 +20,7 @@ sub BUILDARGS {
     if ( $args[0]->{med_oa} ) {
         my %params = %{$args[0]->{med_oa}};
         foreach my $k (keys(%params)) {
-                $arg->{$k} = $params{$k};
+            $arg->{$k} = $params{$k};
         }
     } else {
         $arg = _get_dataconf();
@@ -31,6 +31,7 @@ sub BUILDARGS {
 
 sub get_oa_access_token {
     my ($self) = @_;
+	
     my $url = $self->{api_url} . "/v1/requestAccessToken";
     my $form = {
         'grant_type' => 'authorization_code', 
@@ -59,15 +60,14 @@ sub add_event {
         nonce => $nonce,
         data => $json_event
     };    
-    
     my $ua = LWP::UserAgent->new();
     my $res = $ua->post( $url, $form, 'Content-type' => 'text/plain' );
+	
     return $res->decoded_content;
 }
 
 sub _get_nonce {
-    my $range = 1000;
-
+    my $range = 10000000;
     return int(rand($range));
 }
 

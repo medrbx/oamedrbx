@@ -23,7 +23,7 @@ sub BUILDARGS {
                 $arg->{$k} = $params{$k};
         }
     } else {
-		$arg = _get_dataconf();
+        $arg = _get_dataconf();
     }
 
     return $arg;
